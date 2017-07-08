@@ -12,14 +12,16 @@ main = defaultMain [
    ]
 
 test_case1 = Message [] "some metadata" @?= Message [] "some metadata"
-test_case2 = Message [ Field "some field"
-                     , Components [ Component "some component"
-                                  , Component "some other component"
-                                  ] 
+test_case2 = Message [ Segment [ Field "some field"
+                               , Components [ Component "some component"
+                                            , Component "some other component"
+                                            ] 
+                               ] "MSH"
                      ] "some metadata" 
-             @?= Message [ Field "some field"
-                         , Components [ Component "some component"
-                                      , Component "some other component"
-                                      ] 
+             @?= Message [ Segment [ Field "some field"
+                                   , Components [ Component "some component"
+                                                , Component "some other component"
+                                                ] 
+                                   ] "MSH"
                          ] "some metadata" 
 

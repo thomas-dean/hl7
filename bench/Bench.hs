@@ -10,8 +10,9 @@ main = defaultMain [
 
 test_message1 = Message [] "some metadata"
 
-test_message2 = Message [ Field "some field"
-                        , Components [ Component "some component"
-                                     , Component "some other component"
-                                     ] 
+test_message2 = Message [ Segment [ Field "some field"
+                                  , Components [ Component "some component"
+                                               , Component "some other component"
+                                               ] 
+                                  ] "MSH"
                         ] "some metadata" 
